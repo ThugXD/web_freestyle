@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.5em;
+            background-color: #fff;
+            height: 100%;
+            color: #fff;
+        }
+        #container{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           height: 100vh;
+           border: 1px solid red;
+        }
+        .calculadora{
+            justify-content: center;
+            padding: 10px;
+            border-radius: 20px;
+            border: 2px solid rgb(28, 28, 192);
+            background:  rgb(7, 7, 68);
+        }
+        button{
+            background-color: rgb(3, 3, 83);
+            border: none;
+            box-shadow: 1px 1px 1px 1px rgba(0,0,0.30), 1px 1px 1px 1px rgba(0,0,0.30);  
+            height: 60px;
+            width: 60px;
+            margin: 5px;
+            text-align: center;
+            color: #fff;
+            outline: none;
+        }
+        button:hover{
+            background-color: rgb(27, 27, 175);
+            border: none;
+            box-shadow: 1px 1px 1px 1px rgba(0,0,0.30), 1px 1px 1px 1px rgba(0,0,0.30);  
+            height: 60px;
+            width: 60px;
+            margin: 5px;
+            text-align: center;
+            color: #fff;
+        }
+        .clear{
+            width: 135px;
+        }
+        .clear:hover{
+            width: 135px;
+        }
+        .zero {
+            width: 135px;
+        }
+        .zero:hover{
+            width: 135px;
+        }
+        input{
+            width:  100%;
+            text-align: right;
+            background-color: #252525;
+            height: 40px;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">    
+        <div class="calculadora">
+            
+            <input type="text" id="resultado" disbled="disabled" placeholder="0">
+            <div class="buttons">
+                <button onclick="calcularFunc('acao', 'c')" class="clear" type="button">C</button>
+                <button onclick="calcularFunc('acao', '/')"type="button">/</button>
+                <button onclick="calcularFunc('acao', '*')" type="button">X</button>
+            </div>
+            <div class="buttons">
+                <button onclick="calcularFunc('valor', 7)" type="button">7</button>
+                <button onclick="calcularFunc('valor', 8)" type="button">8</button>
+                <button onclick="calcularFunc('valor', 9)" type="button">9</button>
+                <button onclick="calcularFunc('acao', '-')" type="button">-</button>              
+            </div>
+            <div class="buttons">
+                <button onclick="calcularFunc('valor', 4)" type="button">4</button>
+                <button onclick="calcularFunc('valor', 5)" type="button">5</button>
+                <button onclick="calcularFunc('valor', 6)" type="button">6</button>
+                <button onclick="calcularFunc('acao', '+')" type="button">+</button>              
+            </div>
+            <div class="buttons">
+                <button onclick="calcularFunc('valor', 1)" type="button">1</button>
+                <button onclick="calcularFunc('valor', 2)" type="button">2</button>
+                <button onclick="calcularFunc('valor', 3)" type="button">3</button>
+                <button onclick="calcularFunc('acao', '%')" class="enter" type="button">%</button>
+
+            </div>
+            <div class="buttons">
+                <button onclick="calcularFunc('valor', 0)" class="zero" type="button">0</button>
+                <button onclick="calcularFunc('acao', '.')" type="button">.</button>
+                <button onclick="calcularFunc('acao', '=')" class="enter" type="button">=</button>
+
+            </div>
+        </div>
+    </div>
+   <script>
+    function calcularFunc(tipo, valor){
+        console.log(tipo, valor)
+
+        if(tipo ==='acao'){
+            if(valor === 'c'){
+                //Limpar tela
+                //document.getElementById('resultado').value = '';
+                document.getElementById('resultado').value = null;
+ 
+            }
+            if(valor === '+' || valor === '-' || valor === '*' || valor === '/' || valor === '%'){
+                document.getElementById('resultado').value += valor;
+
+            }
+            if(valor === '='){
+               var valor =   eval(document.getElementById('resultado').value)
+
+               document.getElementById('resultado').value = valor;
+
+            }
+
+        } else if(tipo ==='valor'){
+        
+            //var valor_campo = document.getElementById('resultado').value;
+            //document.getElementById('resultado').value = valor_campo + valor;
+
+            document.getElementById('resultado').value += valor;
+        }
+    }
+   </script>
+</body>
+</html>
