@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reprodutor de Beats</title>
+    <link rel="stylesheet" href="Style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+</head>
+<body>
+<div id="container">
+    <div id="reprodutor">
+        <div class="logo">
+            <i class="fa fa-music" aria-hidden="true">ThugXD</i>
+        </div>
+        <div class="ladoEsquerdo">
+                <img id="list-imagens">
+
+                <div class="volume">
+                    <p id="volumeNumero">50</p>
+                    <i class="fa fa-volume-up" aria-hidden="true" id="icon-volume" onclick="silenciar_som()"></i>
+                    <input id="volumee" onchange=" ajusta_volume()" type="range" min="0" max="100" value="50" step="1"> 
+                </div>
+        </div>
+        <div class="ladoDireito">
+            <div class="mostrar-music">
+                <p id="contagem">1</p>
+                <p>/</p>
+                <p class="total">5</p>
+            </div>
+            <!--Titulo da Musica-->
+            <p id="titulo">Titulo.mp3</p>
+            <p id="artista">Nome Artista</p>
+
+            <!--Parte Central-->
+            <div class="central">
+                <button onclick="musicaAnterior()" id="anterior"><i class="fa fa-step-backward"></i></button>
+                <button onclick="tocarBeat()" id="play"><i class="fa fa-play"></i></button>
+                <button onclick="musicaAseguir()" id="posterior"><i class="fa fa-step-forward"></i></button>
+
+            </div>
+
+            <!--Duração da música  
+                duracaa=duracaoMusica 
+            
+            -->
+            <div class="duracao">
+                <input type="range" min="0" max="100" value="0" id="duracaoMusica" onchange="mostrarDuracao()">              
+            </div>
+            <button id="auto" onclick="autoplay_swicth()">Auto Play <i class="fa fa-circle-dot"  aria-hidden="true"></i></button>
+        </div>
+    </div>
+</div>
+<script src="MusicScript.js"></script>
+</body>
+</html>

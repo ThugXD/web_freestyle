@@ -1,0 +1,408 @@
+*{
+    margin: 
+    0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+    height: 100vh;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+#reprodutor{
+    position: relative;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #566573, #d12525);
+} 
+#reprodutor button{
+   padding: 1px 12px;
+   margin: 0 5px;
+}
+#reprodutor .logo{
+    position: absolute;
+    top: 10px;
+    left:8px;
+    font-size: 24px;
+    color: #ccc;
+    text-transform: capitalize;
+}
+#reprodutor .logo{
+    margin-right:  15px;
+}
+
+
+/* Lado Esquerdo */
+.ladoEsquerdo, .ladoDireito{
+    position: relative;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+/* Organizar os butoes range */
+input[type="range"]{
+    -webkit-appearance: none;
+    width: 70%;
+    outline: none;
+    height: 2px;
+    margin: 0 15px;
+    cursor: pointer;
+    
+}
+input[type="range"]::-webkit-slider-thumb{
+    
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: #25d141;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.ladoDireito input[type="range"]{
+    width: 60%;
+    
+}
+/*So alinhar o icone vloume*/
+/*Imagem da hsica */
+.ladoEsquerdo img{
+    height: 300px;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 1px 0px 20px 12px rgba(0, 0, 0, 0.418) 
+}
+
+/* Organizer a area do volume */
+.ladoEsquerdo .volume{
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.ladoEsquerdo .volume p{
+    font-size: 15px;
+}
+.ladoEsquerdo .volume i{
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: #FF8165;  
+  cursor: pointer;
+}
+.ladoEsquerdo .volume i:hover{
+    background-color: rgba(245, 245, 245, 0.1);
+}
+.volume #volumeNumero{
+    padding: 8px 12px;
+    margin: 0 5px 0 0;
+    background: rgba(245, 245, 245, 0.1);  
+    cursor: pointer; 
+}
+
+/*Lado direito */
+.ladoDireito .central{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ladoDireito .central button{
+    border: none;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    transition: 0.5s;
+    background-color:  rgba(245, 245, 245, 0.1);
+
+}
+.ladoDireito #titulo{
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: capitalize;
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+.ladoDireito #artista{
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: capitalize;
+    font-size: 18px;
+    color: #fff;
+}
+
+.ladoDireito .duracao{
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20px;
+    margin-top: 40px;
+}
+.ladoDireito .duracao p{
+    color: #fff;
+    font-size: 15px;
+    margin-left: 20px;
+}
+.ladoDireito #auto{
+    font-size: 10px;
+    cursor: pointer;
+    margin-top: 45px;
+    border: none;
+    padding: 10px 14px;
+    color: #fff;
+    background: rgba(245, 245, 245, 0.2);
+    outline: none;
+    border-radius: 10x;
+}
+.ladoDireito #auto i{
+    margin-left: 8px;
+}
+#play{
+    background-color:rgba(112, 112, 112, 0.63);
+}
+.ladoDireito button:hover{
+    background: rgba(112, 112, 112, 0.63);
+    cursor: pointer;
+}
+.ladoDireito i:before{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+.ladoDireito .mostrar-music{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    color: #fff;
+    border-radius: 5px;
+    background: rgba(245, 245, 245, 0.2);
+}
+.ladoDireito .mostrar-music p:nth-child(2){
+    margin: 0 5px;
+}
+
+
+
+/* Responsividade do Site para Mobile */
+@media screen and (max-width: 500px) and (min-width: 100px) {
+    .container{
+        height: 100vh;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+    }
+    #reprodutor{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right, #566573, #25d141);
+    } 
+    
+    
+        /* Lado Esquerdo */
+        .ladoEsquerdo, .ladoDireito{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        /*Imagem da hsica */
+        .ladoEsquerdo img{
+            margin-top: 20px;
+            height: 80%;
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 1px 0px 20px 12px rgba(0, 0, 0, 0.418) 
+        }
+
+        /* Organizer a area do volume */
+        .ladoEsquerdo .volume{
+            position: absolute;
+            bottom: -5%;
+            left: 0;
+            width: 80%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            margin-left: 10%;
+            color: #fff;
+        }
+    
+ 
+        /* Lado de Baixo */
+        
+/*Lado direito */
+        .ladoDireito .central{
+            position: absolute;
+            bottom: 20%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+       
+        .ladoDireito .duracao{
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 20px;
+            
+        }
+
+        .ladoDireito #auto{
+            font-size: 10px;
+            cursor: pointer;
+            margin-top: 0px;
+            border: none;
+            padding: 10px 14px;
+            color: #fff;
+            background: rgba(245, 245, 245, 0.2);
+            outline: none;
+            border-radius: 10x;
+        }
+}
+
+
+/* Responsividade do Site para Mobile */
+@media screen and (max-width: 850px) and (min-width: 500px) {
+    .container{
+        height: 100vh;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+    }
+    #reprodutor{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right, #566573, #25d141);
+    } 
+    
+    
+        /* Lado Esquerdo */
+        .ladoEsquerdo, .ladoDireito{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        /*Imagem da hsica */
+        .ladoEsquerdo img{
+            height: 80%;
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 1px 0px 20px 12px rgba(0, 0, 0, 0.418) 
+        }
+
+        /* Organizer a area do volume */
+        .ladoEsquerdo .volume{
+            position: absolute;
+            bottom: -5%;
+            left: 0;
+            width: 80%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            margin-left: 10%;
+            color: #fff;
+        }
+    
+ 
+        /* Lado de Baixo */
+        
+/*Lado direito */
+        .ladoDireito .central{
+            position: absolute;
+            bottom: 20%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+       
+        .ladoDireito .duracao{
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 20px;
+            
+        }
+
+        .ladoDireito #auto{
+            font-size: 10px;
+            cursor: pointer;
+            margin-top: 0px;
+            border: none;
+            padding: 10px 14px;
+            color: #fff;
+            background: rgba(245, 245, 245, 0.2);
+            outline: none;
+            border-radius: 10x;
+        }
+
+
+}
