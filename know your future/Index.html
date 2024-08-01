@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LunaGlow Future Vibes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Bangers&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="lunaglow-container">
+        <div class="lunaglow-crystal-ball">
+            <h1>LunaGlow Palmist</h1>
+            <input type="text" id="lunaglow-name-input" class="lunaglow-input" placeholder="Your name...">
+            <div class="lunaglow-gender-select">
+                <button id="lunaglow-boy-button" class="lunaglow-gender-button active" onclick="lunaglowSelectGender('boy')">Boy</button>
+                <button id="lunaglow-girl-button" class="lunaglow-gender-button" onclick="lunaglowSelectGender('girl')">Girl</button>
+            </div>
+            <button class="lunaglow-button" onclick="lunaglowCheckFuture()">Future Peek!</button>
+            <div id="lunaglow-result"></div>
+        </div>
+    </div>
+</body>
+
+</html>
