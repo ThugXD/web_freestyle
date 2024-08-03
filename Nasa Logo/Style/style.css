@@ -1,0 +1,256 @@
+
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #000;
+}
+#wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+#ctrls {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-family: sans-serif;
+  margin-bottom: 50px;
+}
+#ctrls label {
+  display: flex;
+  align-items: center;
+}
+#size {
+  margin-right: 1em;
+}
+
+/* .......................................................................... */
+@font-face {
+  font-family: "Croissant One", serif;
+  color: #FFF;
+  position: relative;
+  z-index: 50;
+  font-size: 390%;
+  margin: 0 auto;
+  display: block;
+  width: 190px;
+  top: 95px;
+  line-height: 43px;
+  letter-spacing: 8px;
+  z-index: 100;
+  font-weight: bold;
+}
+
+/* .......................................................................... */
+.nasaInsignia {
+  position: relative;
+  font-size: 100px;
+  width: 4.16em;
+  height: 4.16em;
+  color: #fff;
+}
+.nasaInsignia-wrap {
+  height: 100%;
+}
+.nasaInsignia-layer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+/* .......................................................................... */
+.nasaInsignia-earth {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgb( 11, 61, 145 );
+}
+
+/* .......................................................................... */
+.nasaInsignia-meteor {
+  height: 100%;
+  transform:
+    translate( 1.4%, -1.16% )
+    scale( .48 )
+    rotate( 19deg )
+    skew( 44deg )
+  ;
+}
+.nasaInsignia-meteorSVG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: currentColor;
+  transform: rotate( -65deg );
+  animation: 2s linear 1.5s infinite nasaInsignia-meteorSVG;
+}
+@keyframes nasaInsignia-meteorSVG {
+  from { transform: rotate( -65deg ); }
+  to { transform: rotate( -425deg ); }
+}
+
+/* .......................................................................... */
+.nasaInsignia-wing {
+  position: absolute;
+  fill: rgb( 252, 61, 33 );
+}
+.nasaInsignia-wing-aa,
+.nasaInsignia-wing-ab {
+  transform: translate( 4.5%, 19.7% ) scale( 1.23 );
+}
+.nasaInsignia-wing-ba,
+.nasaInsignia-wing-bb {
+  transform: translate( 11.6%, 9.3% ) scale( 1.08 );
+}
+.nasaInsignia-wing-aa { clip-path: inset( 0 52% 0 0 ); }
+.nasaInsignia-wing-ab { clip-path: inset( 0 0 0 47.5% ); }
+.nasaInsignia-wing-ba { clip-path: inset( 0 57% 0 0 ); }
+.nasaInsignia-wing-bb { clip-path: inset( 0 0 0 42.5% ); }
+
+/* .......................................................................... */
+.nasaInsignia-nasa {
+  position: absolute;
+  top: 50%;
+  margin-top: -.43em;
+  font-family: "Croissant One", serif;
+  color: #FFF;
+  font-size: 100%;
+  font-weight: bold;
+}
+.nasaInsignia-nasa-0 { left:  12.1%; }
+.nasaInsignia-nasa-1 { left: 32.9%; }
+.nasaInsignia-nasa-2 { left: 53.7%; }
+.nasaInsignia-nasa-3 { left: 70.6%; }
+
+/* .......................................................................... */
+.nasaInsignia-layerStars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* .......................................................................... */
+.nasaInsignia-star {
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  margin: -1% 0 0 -1%;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+/* .......................................................................... */
+.nasaInsignia-star-c { --dur: 2.0s; }
+.nasaInsignia-star-d { --dur: 2.1s; }
+.nasaInsignia-star-p { --dur: 2.2s; }
+.nasaInsignia-star-C { --dur: 2.3s; }
+.nasaInsignia-star-D { --dur: 2.4s; }
+.nasaInsignia-superstar::before,
+.nasaInsignia-superstar::after {
+  content: "";
+  position: absolute;
+  top: 35%;
+  height: 30%;
+  left: -250%;
+  right: -250%;
+  background-image: linear-gradient( to left, transparent, currentColor, transparent );
+  animation: var( --dur ) linear infinite nasaInsignia-superstar;
+}
+.nasaInsignia-superstar::after {
+  --deg: 90deg;
+}
+@keyframes nasaInsignia-superstar {
+    0% { transform: rotate( var( --deg, 0deg ) ) scaleX( 1 ); }
+   80% { transform: rotate( var( --deg, 0deg ) ) scaleX( .5 ); }
+   95% { transform: rotate( var( --deg, 0deg ) ) scaleX( 0 ); }
+  100% { transform: rotate( var( --deg, 0deg ) ) scaleX( 1 ); }
+}
+
+/* .......................................................................... */
+.nasaInsignia-star-0 { left: 50.0%; top:  4.4%; transform: scale( .6 ); }
+.nasaInsignia-star-1 { left: 47.0%; top:  9.8%; transform: scale( .6 ); }
+.nasaInsignia-star-2 { left: 52.8%; top: 10.6%; transform: scale( .6 ); }
+.nasaInsignia-star-3 { left: 48.4%; top: 14.2%; transform: scale( .4 ); }
+.nasaInsignia-star-4 { left: 52.8%; top: 16.4%; transform: scale( .4 ); }
+.nasaInsignia-star-5 { left: 60.4%; top: 20.8%; transform: scale( .6 ); }
+.nasaInsignia-star-6 { left: 40.4%; top: 14.0%; transform: scale( .4 ); }
+.nasaInsignia-star-7 { left: 41.6%; top: 14.8%; transform: scale( .4 ); }
+.nasaInsignia-star-8 { left: 42.8%; top: 15.6%; transform: scale( .4 ); }
+.nasaInsignia-star-9 { left: 41.0%; top: 17.4%; transform: scale( .4 ); }
+.nasaInsignia-star-a { left: 31.4%; top: 24.0%; transform: scale( .4 ); }
+.nasaInsignia-star-b { left: 33.2%; top: 26.2%; transform: scale( .4 ); }
+.nasaInsignia-star-c { left: 36.6%; top: 25.0%; transform: scale( .6 ); }
+.nasaInsignia-star-d { left: 60.0%; top:  9.4%; transform: scale( .6 ); }
+.nasaInsignia-star-e { left: 32.0%; top: 61.0%; transform: scale( .4 ); }
+.nasaInsignia-star-f { left: 32.2%; top: 70.6%; transform: scale( .6 ); }
+.nasaInsignia-star-g { left: 18.8%; top: 73.2%; transform: scale( .5 ); }
+.nasaInsignia-star-h { left: 13.4%; top: 73.8%; transform: scale( .4 ); }
+.nasaInsignia-star-i { left: 18.2%; top: 76.0%; transform: scale( .4 ); }
+.nasaInsignia-star-j { left: 20.4%; top: 77.6%; transform: scale( .6 ); }
+.nasaInsignia-star-k { left: 26.8%; top: 75.6%; transform: scale( .4 ); }
+.nasaInsignia-star-l { left: 35.6%; top: 77.6%; transform: scale( .6 ); }
+.nasaInsignia-star-m { left: 30.6%; top: 81.6%; transform: scale( .4 ); }
+.nasaInsignia-star-n { left: 36.2%; top: 82.6%; transform: scale( .4 ); }
+.nasaInsignia-star-o { left: 47.4%; top: 81.4%; transform: scale( .4 ); }
+.nasaInsignia-star-p { left: 31.8%; top: 87.4%; transform: scale( .6 ); }
+.nasaInsignia-star-q { left: 57.2%; top: 77.8%; transform: scale( .4 ); }
+.nasaInsignia-star-r { left: 72.0%; top: 69.4%; transform: scale( .4 ); }
+.nasaInsignia-star-s { left: 71.8%; top: 75.2%; transform: scale( .4 ); }
+.nasaInsignia-star-t { left: 82.2%; top: 63.8%; transform: scale( .4 ); }
+.nasaInsignia-star-u { left: 75.8%; top: 66.6%; transform: scale( .6 ); }
+.nasaInsignia-star-v { left: 75.8%; top: 70.2%; transform: scale( .5 ); }
+.nasaInsignia-star-w { left: 83.2%; top: 66.4%; transform: scale( .6 ); }
+.nasaInsignia-star-x { left: 83.2%; top: 74.6%; transform: scale( .4 ); }
+.nasaInsignia-star-y { left: 87.6%; top: 70.4%; transform: scale( .4 ); }
+.nasaInsignia-star-z { left: 90.2%; top: 69.4%; transform: scale( .5 ); }
+.nasaInsignia-star-A { left: 87.0%; top: 77.0%; transform: scale( .4 ); }
+.nasaInsignia-star-B { left: 74.0%; top: 86.2%; transform: scale( .4 ); }
+.nasaInsignia-star-C { left: 88.6%; top: 66.0%; transform: scale( .6 ); }
+.nasaInsignia-star-D { left: 84.2%; top: 77.0%; transform: scale( .6 ); }
+
+/* .......................................................................... */
+/* ..................................  3D  .................................. */
+/* .......................................................................... */
+.nasaInsignia {
+  --dur: .2s;
+  perspective: 10000px;
+  perspective-origin: center;
+  transition: var( --dur );
+  transition-property: perspective, perspective-origin;
+}
+.nasaInsignia-3d {
+  --fac: 2;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+@keyframes nasaInsignia-3d {
+  0% { transform: rotateY( 0deg ); }
+  25% { transform: rotateY( -60deg ); }
+  75% { transform: rotateY( 60deg ); }
+  100% { transform: rotateY( 0deg ); }
+}
+.nasaInsignia-layer {
+  transform: translateZ( 0px );
+  background-color: transparent;
+  transition: var( --dur );
+  transition-property: transform, background-color;
+}
+.nasaInsignia-meteor,
+.nasaInsignia-meteorSVG {
+  transition: var( --dur ) background-color;
+}
+.nasaInsignia-3d .nasaInsignia-layer,
+.nasaInsignia-3d .nasaInsignia-meteor,
+.nasaInsignia-3d .nasaInsignia-meteorSVG {
+  background-color: #ffffff16;
+}
+ ); }
