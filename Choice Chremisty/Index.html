@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Quiz</title>
+    <link rel="stylesheet" href="Style/style.css" type="text/css" media="all" />
+   
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Chemistry Quiz</h1>
+
+        <div class="question">
+            <p>1. Which of the following species is NOT planar?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> CIF3</label>
+                <label><input type="radio" name="q1" value="b"> BF3</label>
+                <label><input type="radio" name="q1" value="c"> PCI3</label>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>2. All of the following reactions can be defined as Lewis acid-base reactions EXCEPT</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> AI(OH)3(s)+OH-(aq)→AI(OH)4-(aq)</label>
+                <label><input type="radio" name="q2" value="b"> CI2(g)+H2O(l)→HOCI(aq)+H+(aq)+CI-(aq)</label>
+                <label><input type="radio" name="q2" value="c"> H+(aq)+NH3(aq)→NH4+(aq)</label>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>3. Which of the following substances is LEAST soluble in water?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> BaCO3</label>
+                <label><input type="radio" name="q3" value="b"> (NH4)2SO4</label>
+                <label><input type="radio" name="q3" value="c"> Zn(NO3)2</label>
+            </div>
+        </div>
+
+        <button onclick="checkAnswers()">Submit</button>
+
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                q1: 'c',
+                q2: 'b',
+                q3: 'a'
+            };
+
+            let score = 0;
+
+            for (let question in answers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption && selectedOption.value === answers[question]) {
+                    score++;
+                }
+            }
+
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = `You scored ${score} out of ${Object.keys(answers).length}.`;
+        }
+    </script>
+</body>
+</html>
