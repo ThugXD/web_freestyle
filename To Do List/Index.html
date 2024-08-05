@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To-do List</title>
+    </head>
+    <body>
+      <div class = "to-do-list-container">
+        <p>To-Do List &#128221;</p>
+        <input type = "text" id = "input-task"
+         placeholder = "Enter your tasks!">
+        <button onclick = "addTask()">Add
+        </button>
+        <ul id = "create-list"></ul>
+      </div>
+      
+      <script>
+        const inputTask =
+        document.getElementById("input-task");
+        const createList =
+        document.getElementById("create-list");
+        
+        function addTask() {
+          if (inputTask.value === "") {
+            confirm("Please enter a task!");
+          } else {
+              let li =
+              document.createElement("li");
+              li.innerHTML = inputTask.value;
+              createList.appendChild(li);
+              inputTask.value = "";
+          
+          
+              let span =
+              document.createElement("span");
+              span.innerHTML = "&times;";
+              li.appendChild(span);
+          }
+        }
+        
+        createList.addEventListener("click",
+          function(e) {
+            if (e.target.tagName === "LI") {
+          e.target.classList.toggle("checked");
+            } else if (e.target.tagName ===
+             "SPAN") {
+              e.target.parentElement.remove()
+              }
+          })
+      </script>
+    </body>
+</html>

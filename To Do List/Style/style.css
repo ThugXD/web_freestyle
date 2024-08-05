@@ -1,0 +1,102 @@
+* {
+    margin:0;
+    padding:0;
+    font-family:Arial;
+ }
+
+body {
+    background-color:#EEEEEE;
+    background-image: url(https://i.ibb.co/BV1cVPw/360-F-513597277-YYqrog-Amg-RR9ohw-TUn-OM784z-S9e-YUc-Sk.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.to-do-list-container {
+    background-color:white;
+    margin:1rem;
+    padding:1rem;
+    width:300px;
+    margin:1rem auto;
+    border-radius:10px;
+}
+
+p {
+    font-size:1.5rem;
+    font-family:Georgia;
+    font-weight:bold;
+}
+
+input {
+    font-size:1rem;
+    padding:.7rem 1rem;
+    border:none;
+    outline:none;
+    background-color:#EEEEEE;
+    width:65%;
+    margin:1rem 0;
+    border-radius:1.5rem 0 0 1.5rem;
+    border:1px solid lightgray;
+}
+
+button {
+    font-size:1rem;
+    padding:.7rem 1.3rem;
+    border:none;
+    margin-left:-9px;
+    background-color:#FF308D;
+    border:1px solid #FF308D;
+    font-weight:bold;
+    border-radius:0 1.5rem 1.5rem 0;
+    color:white;
+}
+
+button:active {
+    color:#FF308D;
+    background-color:white;
+}
+
+li {
+    padding:.5rem 1rem;
+    margin-left:8px;
+    list-style:none;
+    position:relative;
+    margin-bottom:.4rem;
+}
+
+li:before {
+    content:'';
+    width:1rem;
+    height:1rem;
+    border-radius:50%;
+    border:1px solid gray;
+    position:absolute;
+    left:-8px;
+}
+
+li.checked:before {
+    background-color:#FF308D;
+}
+
+span {
+    position:absolute;
+    right:0;
+    font-size:1.4rem;
+    padding:.3rem .75rem;
+    border-radius:50%;
+    color:black;
+}
+    
+span:hover {
+    background-color:#EEEEEE;
+}
+
+li:hover:after {
+    background-color:#EEEEEE;
+}
+
+.checked {
+    color:gray;
+    text-decoration:line-through;
+    text-decoration-color:#FF308D;
+}
