@@ -1,0 +1,49 @@
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.container {
+    margin: 15px;
+}
+input[type="radio"] {
+    display: none;
+}
+.container {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+label {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid black;
+      color: white;
+    background: #0076ff;
+    z-index: 2; /* put it above the accordion content */
+}
+.accordion:last-child > label, .accordion:last-child > .accordion-content {
+    border: none;
+}
+.accordion-content {
+      border-bottom: 1px solid black;
+    padding: 0;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    z-index: -1;
+    transition: 0.3s linear;
+}
+input:checked ~ .accordion-content {
+    padding: 15px;
+    opacity: 1;
+    max-height: 500px;
+    z-index: 1;
+}
